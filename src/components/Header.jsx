@@ -12,7 +12,7 @@ export function Header({ darkMode, toggleDarkMode }) {
       </div>
       <button
         onClick={toggleDarkMode}
-        className='rounded bg-lSecondaryButton dark:bg-dSecondaryButton p-3'
+        className='rounded bg-lSecondaryButton dark:bg-dSecondaryButton p-3 hover:brightness-90 hover:scale-110 dark:hover:brightness-110'
       >
         {darkMode ? <BsFillMoonFill /> : <BsFillSunFill />}
       </button>
