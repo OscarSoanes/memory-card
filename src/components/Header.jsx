@@ -5,7 +5,7 @@ export function Header({ darkMode, toggleDarkMode }) {
   return (
     <header className='pt-8 flex justify-around gap-8 items-center'>
       <div>
-        <h1 className='text-2xl sm:text-4xl'>Memory Card Game</h1>
+        <h1 className='text-2xl sm:text-4xl mb-2'>Memory Card Game</h1>
         <p className='font-bold bg-gradient-to-r from-button to-accent inline-block text-transparent bg-clip-text sm:text-2xl'>
           Colour Edition
         </p>
