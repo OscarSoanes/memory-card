@@ -3,17 +3,19 @@ import { BsFillSunFill } from "react-icons/bs";
 
 export function Header({ darkMode, toggleDarkMode }) {
   return (
-    <header>
+    <header className='pt-8 flex justify-around gap-8 items-center'>
       <div>
-        <h1>Memory Card Game</h1>
-        <button onClick={toggleDarkMode}>
-          {darkMode ? <BsFillMoonFill /> : <BsFillSunFill />}
-        </button>
+        <h1 className='text-2xl sm:text-4xl'>Memory Card Game</h1>
+        <p className='font-bold bg-gradient-to-r from-button to-accent inline-block text-transparent bg-clip-text sm:text-2xl'>
+          Colour Edition
+        </p>
       </div>
-
-      <p className='font-bold bg-gradient-to-r from-button to-accent inline-block text-transparent bg-clip-text'>
-        Colour Edition
-      </p>
+      <button
+        onClick={toggleDarkMode}
+        className='rounded bg-lSecondaryButton dark:bg-dSecondaryButton p-3'
+      >
+        {darkMode ? <BsFillMoonFill /> : <BsFillSunFill />}
+      </button>
     </header>
   );
 }
