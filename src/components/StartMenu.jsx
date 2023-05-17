@@ -11,16 +11,19 @@ export function StartMenu({ changeDifficulty }) {
           onClick={changeDifficulty}
           text='Easy'
           icon={<BsStar />}
+          title='Start game on Easy Mode?'
         />
         <PrimaryButton
           onClick={changeDifficulty}
           text='Medium'
           icon={<BsStarHalf />}
+          title='Start game on Medium Mode?'
         />
         <PrimaryButton
           onClick={changeDifficulty}
           text='Hard'
           icon={<BsStarFill />}
+          title='Start game on Hard Mode?'
         />
       </div>
     </section>
