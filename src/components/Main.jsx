@@ -71,14 +71,13 @@ export function Main() {
 
   return (
     <main>
+      <div className='flex justify-evenly gap-4 text-center mb-4'>
+        {colours && <Scoreboard message='Current' value={score} />}
+        <Scoreboard message='Best' value={bestScore} />
+      </div>
+
       {!difficulty && <StartMenu changeDifficulty={changeDifficulty} />}
 
-      {colours && (
-        <div className='flex justify-evenly gap-4 text-center'>
-          <Scoreboard message='Current' value={score} />
-          <Scoreboard message='Best' value={bestScore} />
-        </div>
-      )}
       {colours && !gameLost && !gameWon && (
         <Game
           colours={colours}
