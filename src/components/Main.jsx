@@ -4,12 +4,14 @@ import ColourDat from "../colours.json";
 import { StartMenu } from "./StartMenu";
 import { Game } from "./Game";
 import { GameOver } from "./GameOver";
+import { Scoreboard } from "./Scoreboard";
 
 export function Main() {
   const [difficulty, setDifficulty] = useState(undefined);
   const [colours, setColours] = useState(undefined);
   const [pressed, setPressed] = useState([]);
   const [score, setScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
   const [gameLost, setGameLost] = useState(false);
   const [gameWon, setGameWon] = useState(false);
 
@@ -35,6 +37,10 @@ export function Main() {
       return;
     }
     setScore(score + 1);
+
+    if (score >= bestScore) {
+      setBestScore(score + 1);
+    }
 
     if (
       (difficulty === "Easy" && score >= 7) ||
@@ -66,7 +72,13 @@ export function Main() {
   return (
     <main>
       {!difficulty && <StartMenu changeDifficulty={changeDifficulty} />}
-      {colours && <p>Current Score: {score}. Best Score: 10</p>}
+
+      {colours && (
+        <div>
+          <Scoreboard message='Current' value={score} />
+          <Scoreboard message='Best' value={bestScore} />
+        </div>
+      )}
       {colours && !gameLost && !gameWon && (
         <Game
           colours={colours}
@@ -75,6 +87,7 @@ export function Main() {
           shuffleTheColours={shuffleTheColours}
         />
       )}
+
       {gameLost && <GameOver result='lost' onClick={resetStates} />}
       {gameWon && <GameOver result='won' onClick={resetStates} />}
     </main>
