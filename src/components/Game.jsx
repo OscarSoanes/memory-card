@@ -1,8 +1,10 @@
+import { Cell } from "./Cell";
+
 export function Game({ colours }) {
   return (
     <div>
       {colours.map((colour) => (
-        <p key={colour.id}>{colour.name}</p>
+        <Cell key={colour.id} colour={colour} />
       ))}
     </div>
   );
