@@ -7,6 +7,8 @@ import { Game } from "./Game";
 export function Main() {
   const [difficulty, setDifficulty] = useState(undefined);
   const [colours, setColours] = useState(undefined);
+  const [pressed, setPressed] = useState([]);
+  const [score, setScore] = useState(0);
 
   function changeDifficulty(event) {
     setDifficulty(event.target.value);
@@ -24,15 +26,40 @@ export function Main() {
     setColours(colourSet);
   }
 
+  function handleCellClick(id) {
+    if (pressed.includes(id)) {
+      console.log("Game Over!");
+    }
+    setScore(score + 1);
+
+    // Handle Win
+
+    const temp = pressed.concat(id);
+
+    setPressed(temp);
+  }
+
+  function shuffleTheColours() {
+    setColours(shuffleArray([...colours]));
+  }
+
   return (
     <main>
       {!difficulty && <StartMenu changeDifficulty={changeDifficulty} />}
-      {colours && <Game colours={colours} />}
+      {colours && <p>Current Score: 0. Best Score: 10</p>}
+      {colours && (
+        <Game
+          colours={colours}
+          cellClick={handleCellClick}
+          pressed={pressed}
+          shuffleTheColours={shuffleTheColours}
+        />
+      )}
     </main>
   );
 }
 
-export function shuffleArray(array) {
+function shuffleArray(array) {
   for (var i = array.length - 1; i > 0; i--) {
     // Generate random number
     var j = Math.floor(Math.random() * (i + 1));
