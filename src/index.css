@@ -20,3 +20,13 @@ header, main, footer {
     width: min(110ch, calc(100% - 4rem));
     margin-inline: auto;
 }
+
+.game {
+    grid-template-columns: repeat( auto-fit, minmax(100px, 1fr) );
+}
+
+@media only screen and (min-width: 395px) {
+    .game {
+        grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) );
+    }
+} 
