@@ -1,0 +1,88 @@
+[
+  {
+    "id": 0,
+    "hex": "#660000",
+    "name": "Blood Red"
+  },
+  {
+    "id": 1,
+    "hex": "#FF0800",
+    "name": "Candy Apple Red"
+  },
+  {
+    "id": 2,
+    "hex": "#FF91A4",
+    "name": "Salmon Pink",
+    "dark": true
+  },
+  {
+    "id": 3,
+    "hex": "#FF4F00",
+    "name": "Aerospace Orange"
+  },
+  {
+    "id": 4,
+    "hex": "#FFBF00",
+    "name": "Amber",
+    "dark": true
+  },
+  {
+    "id": 5,
+    "hex": "#EDC9AF",
+    "name": "Desert Sand",
+    "dark": true
+  },
+  {
+    "id": 6,
+    "hex": "#8DB600",
+    "name": "Apple Green"
+  },
+  {
+    "id": 7,
+    "hex": "#004225",
+    "name": "Racing Green"
+  },
+  {
+    "id": 8,
+    "hex": "#00FFFF",
+    "name": "Cyan",
+    "dark": true
+  },
+  {
+    "id": 9,
+    "hex": "#4A5D23",
+    "name": "Moss Green"
+  },
+  {
+    "id": 10,
+    "hex": "#008080",
+    "name": "Teal"
+  },
+  {
+    "id": 11,
+    "hex": "#007BA7",
+    "name": "Cerulean"
+  },
+  {
+    "id": 12,
+    "hex": "#7DF9FF",
+    "name": "Electric Blue",
+    "dark": true
+  },
+  {
+    "id": 13,
+    "hex": "#4B0082",
+    "name": "Indigo"
+  },
+  {
+    "id": 14,
+    "hex": "#CCCCFF",
+    "name": "Periwinkle",
+    "dark": true
+  },
+  {
+    "id": 13,
+    "hex": "#E30B5C",
+    "name": "Raspberry"
+  }
+]
