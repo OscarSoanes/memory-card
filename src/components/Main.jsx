@@ -3,6 +3,7 @@ import ColourDat from "../colours.json";
 
 import { StartMenu } from "./StartMenu";
 import { Game } from "./Game";
+import { GameOver } from "./GameOver";
 
 export function Main() {
   const [difficulty, setDifficulty] = useState(undefined);
@@ -53,6 +54,15 @@ export function Main() {
     setColours(shuffleArray([...colours]));
   }
 
+  function resetStates() {
+    setGameLost(false);
+    setGameWon(false);
+    setScore(0);
+    setPressed([]);
+    setColours(undefined);
+    setDifficulty(undefined);
+  }
+
   return (
     <main>
       {!difficulty && <StartMenu changeDifficulty={changeDifficulty} />}
@@ -65,8 +75,8 @@ export function Main() {
           shuffleTheColours={shuffleTheColours}
         />
       )}
-      {gameLost && <div>U LOST</div>}
-      {gameWon && <div>U WON WOO</div>}
+      {gameLost && <GameOver result='lost' onClick={resetStates} />}
+      {gameWon && <GameOver result='won' onClick={resetStates} />}
     </main>
   );
 }
