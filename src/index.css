@@ -24,3 +24,9 @@ header, main, footer {
 .game {
     grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) );
 }
+
+@media only screen and (min-width: 640px) {
+    .game {
+        grid-template-columns: repeat( auto-fit, minmax(180px, 1fr) );
+    }
+} 
