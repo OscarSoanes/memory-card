@@ -9,6 +9,8 @@ export function Main() {
   const [colours, setColours] = useState(undefined);
   const [pressed, setPressed] = useState([]);
   const [score, setScore] = useState(0);
+  const [gameLost, setGameLost] = useState(false);
+  const [gameWon, setGameWon] = useState(false);
 
   function changeDifficulty(event) {
     setDifficulty(event.target.value);
@@ -28,7 +30,7 @@ export function Main() {
 
   function handleCellClick(id) {
     if (pressed.includes(id)) {
-      console.log("Game Over!");
+      setGameLost(true);
       return;
     }
     setScore(score + 1);
@@ -38,7 +40,7 @@ export function Main() {
       (difficulty === "Medium" && score >= 11) ||
       (difficulty === "Hard" && score >= 15)
     ) {
-      console.log("You won!");
+      setGameWon(true);
       return;
     }
 
@@ -55,7 +57,7 @@ export function Main() {
     <main>
       {!difficulty && <StartMenu changeDifficulty={changeDifficulty} />}
       {colours && <p>Current Score: {score}. Best Score: 10</p>}
-      {colours && (
+      {colours && !gameLost && !gameWon && (
         <Game
           colours={colours}
           cellClick={handleCellClick}
@@ -63,6 +65,8 @@ export function Main() {
           shuffleTheColours={shuffleTheColours}
         />
       )}
+      {gameLost && <div>U LOST</div>}
+      {gameWon && <div>U WON WOO</div>}
     </main>
   );
 }
