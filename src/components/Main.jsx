@@ -29,10 +29,18 @@ export function Main() {
   function handleCellClick(id) {
     if (pressed.includes(id)) {
       console.log("Game Over!");
+      return;
     }
     setScore(score + 1);
 
-    // Handle Win
+    if (
+      (difficulty === "Easy" && score >= 7) ||
+      (difficulty === "Medium" && score >= 11) ||
+      (difficulty === "Hard" && score >= 15)
+    ) {
+      console.log("You won!");
+      return;
+    }
 
     const temp = pressed.concat(id);
 
@@ -46,7 +54,7 @@ export function Main() {
   return (
     <main>
       {!difficulty && <StartMenu changeDifficulty={changeDifficulty} />}
-      {colours && <p>Current Score: 0. Best Score: 10</p>}
+      {colours && <p>Current Score: {score}. Best Score: 10</p>}
       {colours && (
         <Game
           colours={colours}
