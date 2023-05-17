@@ -1,8 +1,8 @@
 export function Scoreboard({ message, value }) {
   return (
     <>
-      <p>
-        {message} Score: <span>{value}</span>
+      <p className='text-xl'>
+        {message} Score: <span className='font-bold'>{value}</span>
       </p>
     </>
   );
