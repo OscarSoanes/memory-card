@@ -74,7 +74,7 @@ export function Main() {
       {!difficulty && <StartMenu changeDifficulty={changeDifficulty} />}
 
       {colours && (
-        <div>
+        <div className='flex justify-evenly gap-4 text-center'>
           <Scoreboard message='Current' value={score} />
           <Scoreboard message='Best' value={bestScore} />
         </div>
