@@ -27,7 +27,7 @@ export function Main() {
   return (
     <main>
       {!difficulty && <StartMenu changeDifficulty={changeDifficulty} />}
-      {colours && <Game />}
+      {colours && <Game colours={colours} />}
     </main>
   );
 }
