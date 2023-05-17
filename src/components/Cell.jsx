@@ -1,6 +1,7 @@
-export function Cell({ colour }) {
+export function Cell({ colour, onClick }) {
   return (
     <section
+      onClick={() => onClick(colour.id)}
       className={
         "aspect-square rounded-md flex flex-col items-center justify-center relative hover:scale-95 hover:rounded-none transition-cell ease-in duration-200 motion-reduce:transition-none motion-reduce:hover:transform-none cursor-pointer"
       }
