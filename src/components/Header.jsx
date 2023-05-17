@@ -13,6 +13,8 @@ export function Header({ darkMode, toggleDarkMode }) {
       <button
         onClick={toggleDarkMode}
         className='rounded bg-lSecondaryButton dark:bg-dSecondaryButton p-3 hover:brightness-90 hover:scale-110 dark:hover:brightness-110'
+        title={darkMode ? "Set To Light Mode" : "Set To Dark Mode"}
+        aria-label={darkMode ? "Set To Light Mode" : "Set To Dark Mode"}
       >
         {darkMode ? <BsFillMoonFill /> : <BsFillSunFill />}
       </button>
