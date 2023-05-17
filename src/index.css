@@ -22,11 +22,5 @@ header, main, footer {
 }
 
 .game {
-    grid-template-columns: repeat( auto-fit, minmax(100px, 1fr) );
+    grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) );
 }
-
-@media only screen and (min-width: 395px) {
-    .game {
-        grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) );
-    }
-} 
