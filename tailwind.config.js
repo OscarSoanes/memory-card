@@ -15,6 +15,9 @@ module.exports = {
         dPrimary: "#f7f3f3",
         dBackground: "#181211",
         dSecondaryButton: "#231c1a"
+      },
+      transitionProperty: {
+        'cell': 'border-radius transform',
       }
     },
   },
